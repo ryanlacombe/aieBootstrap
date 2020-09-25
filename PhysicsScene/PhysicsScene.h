@@ -6,7 +6,7 @@
 class PhysicsScene
 {
 public:
-	PhysicsScene();
+	PhysicsScene() : m_timeStep(0.01f), m_gravity(glm::vec2(0.0f, 0.0f)) {}
 	~PhysicsScene();
 
 	void addActor(PhysicsObject* actor);
@@ -20,6 +20,13 @@ public:
 
 	void setTimeStep(const float timeStep) { m_timeStep = timeStep; }
 	float getTimeStep() const { return m_timeStep; }
+
+	void checkForCollision();
+
+	static bool planeToPlane(PhysicsObject*, PhysicsObject*);
+	static bool planeToSphere(PhysicsObject*, PhysicsObject*);
+	static bool sphereToPlane(PhysicsObject*, PhysicsObject*);
+	static bool sphereToSphere(PhysicsObject*, PhysicsObject*);
 
 protected:
 	glm::vec2 m_gravity;

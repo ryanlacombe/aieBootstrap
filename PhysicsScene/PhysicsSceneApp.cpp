@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "Sphere.h"
 #include "PhysicsScene.h"
+#include "Plane.h"
 #include <Gizmos.h>
 #include <vector>
 
@@ -18,27 +19,50 @@ PhysicsSceneApp::~PhysicsSceneApp()
 
 bool PhysicsSceneApp::startup() {
 	
-	// increase the 2d line count to maximize the number of objects we can draw
+	// increase the 2D line count to maximize the number of objects we can draw
 	aie::Gizmos::create(255U, 255U, 65535U, 65535U);
 
 	m_2dRenderer = new aie::Renderer2D();
-	m_font = new aie::Font("./font/consolas.ttf", 32);
 
-	glm::vec2 gravity = glm::vec2(0.0f, -10.0f);
+	// TODO: remember to change this when redistributing a build!
+	// the following path would be used instead: "./font/consolas.ttf"
+	m_font = new aie::Font("../bin/font/consolas.ttf", 32);
 
+	// initialize gravity
+	glm::vec2 gravity = glm::vec2(0.0f, -80.0f);
+
+	// initialize the PhysicsScene
 	m_physicsScene = new PhysicsScene();
-	m_physicsScene->setGravity(glm::vec2(0, 0));
+	m_physicsScene->setGravity(gravity);
 	m_physicsScene->setTimeStep(0.01f);
 
+	// initialize position and velocity
 	glm::vec2 initialPosition = glm::vec2(-60.0f, 0.0f);
 	glm::vec2 finalPosition = glm::vec2(60.0f, 0.0f);
 	glm::vec2 initialVelocity = calculateVelocity(initialPosition, finalPosition, gravity.y, 5.0f);
-	Sphere* ball = new Sphere(initialPosition, initialVelocity, 1.0f, 4.0f, glm::vec4(1.0f, 0.0f, 0.5f, 1.0f));
 
-	m_physicsScene->addActor(ball);
-
+	// simulate using kinematic formulae
 	setupContinuousDemo(initialPosition, initialVelocity, gravity.y);
 
+	// create a ball to print on the screen
+	Sphere* ball = new Sphere(initialPosition, initialVelocity,
+		1.0f, 4.0f, glm::vec4(1.0f, 0.0f, 0.5f, 1.0f));
+	m_physicsScene->addActor(ball);
+
+	Sphere* ball1 = new Sphere(glm::vec2(-40.0f, 0.0f), glm::vec2(60.0f, 0.0f),
+		8.0f, 8.0f, glm::vec4(1, 0, 0, 1));
+	m_physicsScene->addActor(ball1);
+
+	Sphere* ball2 = new Sphere(glm::vec2(40.0f, 0.0f), glm::vec2(-30.0f, 0.0f),
+		4.0f, 6.0f, glm::vec4(0, 1, 0, 1));
+	m_physicsScene->addActor(ball2);
+
+	Sphere* ball3 = new Sphere(glm::vec2(60.0f, 0.0f), glm::vec2(-30.0f, 0.0f),
+		1.0f, 4.0f, glm::vec4(0, 0, 1, 1));
+	m_physicsScene->addActor(ball3);
+
+	Plane* floor = new Plane(glm::vec2(1.0f, -6.0f), 20.0f);
+	m_physicsScene->addActor(floor);
 
 	return true;
 }
@@ -54,7 +78,12 @@ void PhysicsSceneApp::update(float deltaTime) {
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
+	// clear the buffer
 	aie::Gizmos::clear();
+
+	aie::Gizmos::add2DAABB(glm::vec2(-60.0f, 0.0f), glm::vec2(4.0f, 4.0f), glm::vec4(1, 1, 1, 1));
+	aie::Gizmos::add2DAABB(glm::vec2(60.0f, 0.0f), glm::vec2(4.0f, 4.0f), glm::vec4(1, 1, 1, 1));
+
 	m_physicsScene->update(deltaTime);
 	m_physicsScene->updateGizmos();
 
@@ -86,7 +115,7 @@ void PhysicsSceneApp::setupContinuousDemo(glm::vec2 initialPosition, glm::vec2 i
 {
 	float time = 0.0f;
 	float timeStep = 0.5f;
-	float radius = 1.0f;
+	float radius = 3.0f;
 	int segments = 12;
 	glm::vec4 color = glm::vec4(1, 1, 0, 1);
 	glm::vec2 finalPosition = initialPosition;
