@@ -24,9 +24,12 @@ bool PhysicsSceneApp::startup() {
 
 	m_2dRenderer = new aie::Renderer2D();
 
-	// TODO: remember to change this when redistributing a build!
+	
 	// the following path would be used instead: "./font/consolas.ttf"
 	m_font = new aie::Font("../bin/font/consolas.ttf", 32);
+
+	//Create an input
+	aie::Input* input = aie::Input::getInstance();
 
 	// initialize gravity
 	glm::vec2 gravity = glm::vec2(0.0f, -80.0f);
@@ -44,34 +47,20 @@ bool PhysicsSceneApp::startup() {
 	// simulate using kinematic formulae
 	setupContinuousDemo(initialPosition, initialVelocity, gravity.y);
 
-	// create a ball to print on the screen
-	Sphere* ball = new Sphere(initialPosition, initialVelocity,
-		1.0f, 4.0f, glm::vec4(1.0f, 0.0f, 0.5f, 1.0f));
-	m_physicsScene->addActor(ball);
+	Sphere* demoBall1 = new Sphere(glm::vec2(-40.0f, 0.0f), glm::vec2(-30.0f, 0.0f), 2.0f, 4.0f, glm::vec4(1, 1, 1, 1));
+	m_physicsScene->addActor(demoBall1);
 
-	Sphere* ball1 = new Sphere(glm::vec2(-40.0f, 0.0f), glm::vec2(100.0f, 0.0f),
-		6.0f, 8.0f, glm::vec4(1, 0, 0, 1));
-	m_physicsScene->addActor(ball1);
+	Sphere* demoBall2 = new Sphere(glm::vec2(40.0f, 0.0f), glm::vec2(30.0f, 0.0f), 3.0f, 5.0f, glm::vec4(1, 0, 1, 0));
+	m_physicsScene->addActor(demoBall2);
 
-	Sphere* ball2 = new Sphere(glm::vec2(40.0f, 0.0f), glm::vec2(30.0f, 0.0f),
-		4.0f, 6.0f, glm::vec4(0, 1, 0, 1));
-	m_physicsScene->addActor(ball2);
+	Sphere* demoBall3 = new Sphere(glm::vec2(30.0f, 0.0f), glm::vec2(30.0f, 0.0f), 5.0f, 9.0f, glm::vec4(0, 1, 0, 1));
+	m_physicsScene->addActor(demoBall3);
 
-	Sphere* ball3 = new Sphere(glm::vec2(60.0f, 0.0f), glm::vec2(60.0f, 0.0f),
-		1.0f, 4.0f, glm::vec4(0, 0, 1, 1));
-	m_physicsScene->addActor(ball3);
+	Plane* demoPlane1 = new Plane(glm::vec2(1.0f, -2.0f), 30.0f);
+	m_physicsScene->addActor(demoPlane1);
 
-	Plane* floor = new Plane(glm::vec2(1.0f, -2.0f), 40.0f);
-	m_physicsScene->addActor(floor);
-
-	Plane* floor2 = new Plane(glm::vec2(-1.0f, -2.0f), 40.0f);
-	m_physicsScene->addActor(floor2);
-
-	Plane* floor3 = new Plane(glm::vec2(1.0f, 2.0f), 40.0f);
-	m_physicsScene->addActor(floor3);
-
-	Plane* floor4 = new Plane(glm::vec2(-1.0f, 2.0f), 40.0f);
-	m_physicsScene->addActor(floor4);
+	Plane* demoPlane2 = new Plane(glm::vec2(-1.0f, -3.0f), 30.0f);
+	m_physicsScene->addActor(demoPlane2);
 
 	return true;
 }
@@ -86,6 +75,39 @@ void PhysicsSceneApp::update(float deltaTime) {
 
 	// input example
 	aie::Input* input = aie::Input::getInstance();
+
+	//Press "B" to activate a potentially program killing Bouncy House!
+	if (input->isKeyDown(aie::INPUT_KEY_B))
+	{
+		// create a ball to print on the screen
+		/*Sphere* ball = new Sphere(0.0f, 0.0f,
+			1.0f, 4.0f, glm::vec4(1.0f, 0.0f, 0.5f, 1.0f));
+		m_physicsScene->addActor(ball);*/
+
+		Sphere* ball1 = new Sphere(glm::vec2(-40.0f, 0.0f), glm::vec2(100.0f, 0.0f),
+			6.0f, 8.0f, glm::vec4(1, 0, 0, 1));
+		m_physicsScene->addActor(ball1);
+
+		Sphere* ball2 = new Sphere(glm::vec2(40.0f, 0.0f), glm::vec2(30.0f, 0.0f),
+			4.0f, 6.0f, glm::vec4(0, 1, 0, 1));
+		m_physicsScene->addActor(ball2);
+
+		Sphere* ball3 = new Sphere(glm::vec2(60.0f, 0.0f), glm::vec2(60.0f, 0.0f),
+			1.0f, 4.0f, glm::vec4(0, 0, 1, 1));
+		m_physicsScene->addActor(ball3);
+
+		Plane* floor = new Plane(glm::vec2(1.0f, -2.0f), 40.0f);
+		m_physicsScene->addActor(floor);
+
+		Plane* floor2 = new Plane(glm::vec2(-1.0f, -2.0f), 40.0f);
+		m_physicsScene->addActor(floor2);
+
+		Plane* floor3 = new Plane(glm::vec2(1.0f, 2.0f), 40.0f);
+		m_physicsScene->addActor(floor3);
+
+		Plane* floor4 = new Plane(glm::vec2(-1.0f, 2.0f), 40.0f);
+		m_physicsScene->addActor(floor4);
+	}
 
 	// clear the buffer
 	aie::Gizmos::clear();
