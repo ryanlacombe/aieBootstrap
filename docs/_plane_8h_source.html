@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Physics for Games Assesment 1: PhysicsScene/Plane.h Source File</title>
+<title>Physics for Games Assesment: Plane.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Physics for Games Assesment 1
+   <div id="projectname">Physics for Games Assesment
    </div>
   </td>
  </tr>
@@ -93,20 +93,20 @@ $(document).ready(function(){initNavTree('_plane_8h_source.html',''); initResiza
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="class_plane.html#acac0d9c003e0ab10d07b146c3566a0c7">Plane</a>();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="class_plane.html#acac0d9c003e0ab10d07b146c3566a0c7">Plane</a>(<a class="code" href="structglm_1_1vec.html">glm::vec2</a> normal, <span class="keywordtype">float</span> distanceToOrigin);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="class_plane.html#acac0d9c003e0ab10d07b146c3566a0c7">Plane</a>(glm::vec2 normal, <span class="keywordtype">float</span> distanceToOrigin);</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_plane.html#a69abd86051c880dcb44b249ad10c4436">   10</a></span>&#160;    <a class="code" href="class_plane.html#a69abd86051c880dcb44b249ad10c4436">~Plane</a>() {}</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_plane.html#a5c182dc7bd835996cbaa1eec476e3b7d">   12</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_plane.html#a5c182dc7bd835996cbaa1eec476e3b7d">fixedUpdate</a>(<a class="code" href="structglm_1_1vec.html">glm::vec2</a> gravity, <span class="keywordtype">float</span> timeStep) {}</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_plane.html#a5c182dc7bd835996cbaa1eec476e3b7d">   12</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_plane.html#a5c182dc7bd835996cbaa1eec476e3b7d">fixedUpdate</a>(glm::vec2 gravity, <span class="keywordtype">float</span> timeStep) {}</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_plane.html#a86ce7f8d034c0958e6632dfe8b05cd26">   13</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_plane.html#a86ce7f8d034c0958e6632dfe8b05cd26">debug</a>() {}</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_plane.html#aa3fa5eb66f02f2b37609f7bcfca6964f">makeGizmo</a>();</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_plane.html#a7f32d0e7a8bee9d8cac9c95979f5e13f">resolveCollision</a>(<a class="code" href="class_rigidbody.html">Rigidbody</a>* other, <a class="code" href="structglm_1_1vec.html">glm::vec2</a> contact);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_plane.html#a7f32d0e7a8bee9d8cac9c95979f5e13f">resolveCollision</a>(<a class="code" href="class_rigidbody.html">Rigidbody</a>* other, glm::vec2 contact);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_plane.html#a939abae9f7aee50b4fa0a4908f4bc209">   18</a></span>&#160;    <a class="code" href="structglm_1_1vec.html">glm::vec2</a> <a class="code" href="class_plane.html#a939abae9f7aee50b4fa0a4908f4bc209">getNormal</a>() { <span class="keywordflow">return</span> <a class="code" href="class_plane.html#a589218a5bbd8be0d91594bdee383798e">m_normal</a>; }</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_plane.html#a939abae9f7aee50b4fa0a4908f4bc209">   18</a></span>&#160;    glm::vec2 <a class="code" href="class_plane.html#a939abae9f7aee50b4fa0a4908f4bc209">getNormal</a>() { <span class="keywordflow">return</span> <a class="code" href="class_plane.html#a589218a5bbd8be0d91594bdee383798e">m_normal</a>; }</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_plane.html#a3d68cb63e77f29157252a41659e6fa5b">   19</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_plane.html#a3d68cb63e77f29157252a41659e6fa5b">getDistance</a>() { <span class="keywordflow">return</span> <a class="code" href="class_plane.html#aa5b96cec4f43f2cb16c3b575eb9c51ad">m_distanceToOrigin</a>; }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_plane.html#a589218a5bbd8be0d91594bdee383798e">   22</a></span>&#160;    <a class="code" href="structglm_1_1vec.html">glm::vec2</a> <a class="code" href="class_plane.html#a589218a5bbd8be0d91594bdee383798e">m_normal</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_plane.html#a589218a5bbd8be0d91594bdee383798e">   22</a></span>&#160;    glm::vec2 <a class="code" href="class_plane.html#a589218a5bbd8be0d91594bdee383798e">m_normal</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_plane.html#aa5b96cec4f43f2cb16c3b575eb9c51ad">   23</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_plane.html#aa5b96cec4f43f2cb16c3b575eb9c51ad">m_distanceToOrigin</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
@@ -117,7 +117,6 @@ $(document).ready(function(){initNavTree('_plane_8h_source.html',''); initResiza
 <div class="ttc" id="a_rigid_body_8h_html"><div class="ttname"><a href="_rigid_body_8h.html">RigidBody.h</a></div></div>
 <div class="ttc" id="aclass_plane_html_a3d68cb63e77f29157252a41659e6fa5b"><div class="ttname"><a href="class_plane.html#a3d68cb63e77f29157252a41659e6fa5b">Plane::getDistance</a></div><div class="ttdeci">float getDistance()</div><div class="ttdef"><b>Definition:</b> Plane.h:19</div></div>
 <div class="ttc" id="aclass_plane_html_a69abd86051c880dcb44b249ad10c4436"><div class="ttname"><a href="class_plane.html#a69abd86051c880dcb44b249ad10c4436">Plane::~Plane</a></div><div class="ttdeci">~Plane()</div><div class="ttdef"><b>Definition:</b> Plane.h:10</div></div>
-<div class="ttc" id="astructglm_1_1vec_html"><div class="ttname"><a href="structglm_1_1vec.html">glm::vec</a></div><div class="ttdef"><b>Definition:</b> precision.hpp:35</div></div>
 <div class="ttc" id="a_physics_object_8h_html"><div class="ttname"><a href="_physics_object_8h.html">PhysicsObject.h</a></div></div>
 <div class="ttc" id="aclass_plane_html_a589218a5bbd8be0d91594bdee383798e"><div class="ttname"><a href="class_plane.html#a589218a5bbd8be0d91594bdee383798e">Plane::m_normal</a></div><div class="ttdeci">glm::vec2 m_normal</div><div class="ttdef"><b>Definition:</b> Plane.h:22</div></div>
 <div class="ttc" id="aclass_plane_html_acac0d9c003e0ab10d07b146c3566a0c7"><div class="ttname"><a href="class_plane.html#acac0d9c003e0ab10d07b146c3566a0c7">Plane::Plane</a></div><div class="ttdeci">Plane()</div><div class="ttdef"><b>Definition:</b> Plane.cpp:4</div></div>
@@ -130,7 +129,7 @@ $(document).ready(function(){initNavTree('_plane_8h_source.html',''); initResiza
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3481433bd6f4ac9ba34605e657141cc2.html">PhysicsScene</a></li><li class="navelem"><a class="el" href="_plane_8h.html">Plane.h</a></li>
+    <li class="navelem"><a class="el" href="_plane_8h.html">Plane.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>

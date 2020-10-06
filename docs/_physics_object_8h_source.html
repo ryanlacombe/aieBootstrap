@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Physics for Games Assesment 1: PhysicsScene/PhysicsObject.h Source File</title>
+<title>Physics for Games Assesment: PhysicsObject.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Physics for Games Assesment 1
+   <div id="projectname">Physics for Games Assesment
    </div>
   </td>
  </tr>
@@ -86,7 +86,7 @@ $(document).ready(function(){initNavTree('_physics_object_8h_source.html',''); i
 </div><!--header-->
 <div class="contents">
 <a href="_physics_object_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="ext_8hpp.html">glm\ext.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;glm\ext.hpp&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345">    4</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345">ShapeType</a> {</div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345a67572d1492c84d8d417b61e864f13f24">    5</a></span>&#160;    <a class="code" href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345a67572d1492c84d8d417b61e864f13f24">PLANE</a> = 0,</div>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('_physics_object_8h_source.html',''); i
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_physics_object.html#a0dd37cc0f9535b676d3df937eaeb4780">   14</a></span>&#160;    <a class="code" href="class_physics_object.html#a0dd37cc0f9535b676d3df937eaeb4780">PhysicsObject</a>() {};</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_physics_object.html#a58ea286456823d7c7dfc1221701d16f8">   17</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_physics_object.html#a58ea286456823d7c7dfc1221701d16f8">fixedUpdate</a>(<a class="code" href="structglm_1_1vec.html">glm::vec2</a> gravity, <span class="keywordtype">float</span> timeStep) = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_physics_object.html#a58ea286456823d7c7dfc1221701d16f8">   17</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_physics_object.html#a58ea286456823d7c7dfc1221701d16f8">fixedUpdate</a>(glm::vec2 gravity, <span class="keywordtype">float</span> timeStep) = 0;</div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_physics_object.html#a7f960a2ede3b07394d5dc4a5beca0f4f">   18</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_physics_object.html#a7f960a2ede3b07394d5dc4a5beca0f4f">debug</a>() = 0;</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_physics_object.html#ac1cbc181f7d9bd0a51338c164d822171">   19</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_physics_object.html#ac1cbc181f7d9bd0a51338c164d822171">makeGizmo</a>() = 0;</div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_physics_object.html#ae80a0c4668a1bd03b54587235e6274e0">   20</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_physics_object.html#ae80a0c4668a1bd03b54587235e6274e0">resetPosition</a>() {};</div>
@@ -116,9 +116,7 @@ $(document).ready(function(){initNavTree('_physics_object_8h_source.html',''); i
 <div class="ttc" id="a_physics_object_8h_html_a5a4538eeab397888d88a4eefcc5a1345a71acaae220b1e086e991e64959f4f827"><div class="ttname"><a href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345a71acaae220b1e086e991e64959f4f827">SHAPE_COUNT</a></div><div class="ttdeci">@ SHAPE_COUNT</div><div class="ttdef"><b>Definition:</b> PhysicsObject.h:7</div></div>
 <div class="ttc" id="aclass_physics_object_html_a7f960a2ede3b07394d5dc4a5beca0f4f"><div class="ttname"><a href="class_physics_object.html#a7f960a2ede3b07394d5dc4a5beca0f4f">PhysicsObject::debug</a></div><div class="ttdeci">virtual void debug()=0</div></div>
 <div class="ttc" id="a_physics_object_8h_html_a5a4538eeab397888d88a4eefcc5a1345aae4f0962d104ea473feec5598689316d"><div class="ttname"><a href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345aae4f0962d104ea473feec5598689316d">SPHERE</a></div><div class="ttdeci">@ SPHERE</div><div class="ttdef"><b>Definition:</b> PhysicsObject.h:6</div></div>
-<div class="ttc" id="aext_8hpp_html"><div class="ttname"><a href="ext_8hpp.html">ext.hpp</a></div></div>
 <div class="ttc" id="aclass_physics_object_html_a1f46d4b98bd4d50eb5f7e63c43643cbf"><div class="ttname"><a href="class_physics_object.html#a1f46d4b98bd4d50eb5f7e63c43643cbf">PhysicsObject::PhysicsObject</a></div><div class="ttdeci">PhysicsObject(ShapeType a_shapeID)</div><div class="ttdef"><b>Definition:</b> PhysicsObject.h:13</div></div>
-<div class="ttc" id="astructglm_1_1vec_html"><div class="ttname"><a href="structglm_1_1vec.html">glm::vec</a></div><div class="ttdef"><b>Definition:</b> precision.hpp:35</div></div>
 <div class="ttc" id="aclass_physics_object_html_ac1cbc181f7d9bd0a51338c164d822171"><div class="ttname"><a href="class_physics_object.html#ac1cbc181f7d9bd0a51338c164d822171">PhysicsObject::makeGizmo</a></div><div class="ttdeci">virtual void makeGizmo()=0</div></div>
 <div class="ttc" id="a_physics_object_8h_html_a5a4538eeab397888d88a4eefcc5a1345"><div class="ttname"><a href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345">ShapeType</a></div><div class="ttdeci">ShapeType</div><div class="ttdef"><b>Definition:</b> PhysicsObject.h:4</div></div>
 <div class="ttc" id="aclass_physics_object_html_a2e27efd93552e7264707da6704710f92"><div class="ttname"><a href="class_physics_object.html#a2e27efd93552e7264707da6704710f92">PhysicsObject::getShapeID</a></div><div class="ttdeci">ShapeType getShapeID()</div><div class="ttdef"><b>Definition:</b> PhysicsObject.h:22</div></div>
@@ -131,7 +129,7 @@ $(document).ready(function(){initNavTree('_physics_object_8h_source.html',''); i
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3481433bd6f4ac9ba34605e657141cc2.html">PhysicsScene</a></li><li class="navelem"><a class="el" href="_physics_object_8h.html">PhysicsObject.h</a></li>
+    <li class="navelem"><a class="el" href="_physics_object_8h.html">PhysicsObject.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
